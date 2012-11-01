@@ -25,3 +25,7 @@ The first time you deploy, the script will take you to an OAuth2 page to authori
 * [Werkzeug](http://werkzeug.pocoo.org/) - [License](https://github.com/mitsuhiko/werkzeug/blob/master/LICENSE)
 * [Werkzeug Debugger Appengine](https://github.com/daaku/werkzeug-debugger-appengine)
 * [GAE Mini Profiler](https://github.com/kamens/gae_mini_profiler) - [License](http://en.wikipedia.org/wiki/MIT_License)
+
+## Example
+
+[your-gae-flask-app.appspot.com](http://your-gae-flask-app.appspot.com/)
