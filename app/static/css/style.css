@@ -1,0 +1,44 @@
+.navbar-static-top {
+    /* Fix for missing margin-bottom in Bootstrap 2.2.0 */
+    margin-bottom: 20px;
+}
+
+html {
+    background-color: #eee;
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+}
+
+
+.wrapper {
+    background-color: #fff;
+    padding-bottom: 70px;
+}
+
+.footer {
+    color: #777;
+    padding: 70px 0;
+    border-top: 1px solid #ccc;
+    background-color: #eee;
+}
+
+.footer ul.nav li {
+    display: inline-table;
+    padding: 0 2px;
+}
+
+.footer ul.nav li:first-child {
+    padding-left: 0;
+}
+
+@media (max-width: 767px) {
+    .footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

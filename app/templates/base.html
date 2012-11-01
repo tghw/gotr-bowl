@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">
+        <!--[if lte IE 7]>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome-ie7.css" rel="stylesheet">
+        <![endif]-->
+        <link href="{{ static('css/style.css') }}" rel="stylesheet">
+        {% block extra_head %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        <div class="wrapper">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a href="{{ url_for('index') }}" class="brand">GAE Flask Site</a>
+                        <ul class="nav">
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('authed') }}">Authorized</a></li>
+                            <li><a href="{{ url_for('admin') }}">Admin Only</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="push"><!--//--></div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p class="pull-right">Copyright &copy; {{ now().year }}</p>
+                <p>Thanks for using GAE-Flask!</p>
+                <ul class="nav">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li class="muted">·</li>
+                    <li><a href="{{ url_for('authed') }}">Authorized</a></li>
+                    <li class="muted">·</li>
+                    <li><a href="{{ url_for('admin') }}">Admin Only</a></li>
+                </ul>
+            </div>
+        </footer>
+        {% endblock %}
+    </body>
+</html>
