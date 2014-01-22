@@ -4,7 +4,7 @@
 }
 
 html {
-    background-color: #eee;
+    background-color: #fff;
     height: 100%;
 }
 
@@ -12,6 +12,84 @@ body {
     background-color: #fff;
 }
 
+.den, .sea, .about h1 {
+    text-align: center;
+}
+
+.den {
+    color: #024;
+    width: 50%;
+}
+
+.den a {
+    color: #024;
+    text-decoration: underline;
+}
+
+.den a:hover {
+    color: #FB4F14;
+}
+
+.den h1 span {
+    border-bottom: 5px solid #FB4F14;
+}
+
+.sea {
+    color: #06192E;
+    width: 50%;
+}
+
+.sea a {
+    color: #06192E;
+    text-decoration: underline;
+}
+.sea a:hover {
+    color: #4EAE47;
+}
+
+.sea h1 span {
+    border-bottom: 5px solid #4EAE47;
+}
+
+.amount {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.bar-wrapper {
+    height: 400px;
+    width: 80px;
+    margin: 10px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}
+
+.den .bar-wrapper {
+    background: #bfc8d0 url(/static/img/den_bg.png) bottom left;
+}
+
+.sea .bar-wrapper {
+    background: #c1c5cb url(/static/img/sea_bg.png) bottom left;
+}
+
+.bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.den .bar {
+    background: #024 url(/static/img/den.png) bottom left;
+    height: 50%;
+}
+
+.sea .bar {
+    background: #06192E url(/static/img/sea.png) bottom left;
+    height: 50%;
+}
 
 .wrapper {
     background-color: #fff;

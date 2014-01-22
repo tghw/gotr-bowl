@@ -15,11 +15,8 @@ sys.path.insert(0, join(root_dir, 'libs'))
 
 from flask import Flask
 from werkzeug_debugger_appengine import get_debugged_app
-from gae_mini_profiler import profiler, config as profiler_config
 from views import views
 import settings
-
-profiler_config.enabled_profiler_emails = settings.ADMIN_EMAILS
 
 app = Flask(__name__)
 app.config.from_object(settings)
@@ -28,7 +25,6 @@ app.secret_key = settings.SECRET_KEY
 if app.config.get('DEBUG', False):
     app.debug = True
     app = get_debugged_app(app)
-app = profiler.ProfilerWSGIMiddleware(app)
 
 # For export
 wsgi = app
