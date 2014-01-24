@@ -23,15 +23,31 @@ body {
 
 .den a {
     color: #024;
-    text-decoration: underline;
+    color: #FB4F14;
 }
 
 .den a:hover {
     color: #FB4F14;
+    text-decoration: underline;
+}
+
+.den a.thumbnail:hover {
+    border-color: #FB4F14;
+    -webkit-box-shadow: 0 1px 4px rgba(251, 79, 20, 0.25);
+    -moz-box-shadow: 0 1px 4px rgba(251, 79, 20, 0.25);
+    box-shadow: 0 1px 4px rgba(251, 79, 20, 0.25);
 }
 
 .den h1 span {
     border-bottom: 5px solid #FB4F14;
+}
+
+.denwell {
+    background-color: #024;
+}
+
+.denwell a {
+    display: block;
 }
 
 .sea {
@@ -41,14 +57,30 @@ body {
 
 .sea a {
     color: #06192E;
-    text-decoration: underline;
+    color: #4EAE47;
 }
 .sea a:hover {
     color: #4EAE47;
+    text-decoration: underline;
+}
+
+.sea a.thumbnail:hover {
+    border-color: #4EAE47;
+    -webkit-box-shadow: 0 1px 4px rgba(78, 174, 71, 0.25);
+    -moz-box-shadow: 0 1px 4px rgba(78, 174, 71, 0.25);
+    box-shadow: 0 1px 4px rgba(78, 174, 71, 0.25);
 }
 
 .sea h1 span {
     border-bottom: 5px solid #4EAE47;
+}
+
+.seawell {
+    background-color: #06192E;
+}
+
+.seawell a {
+    display: block;
 }
 
 .amount {
