@@ -15,17 +15,16 @@ def add_auth():
 def index():
     den = Score.get_or_insert('den', name='Denver', amount=0)
     sea = Score.get_or_insert('sea', name='Seattle', amount=0)
-    den_factor = 100
-    sea_factor = 100
-    if den.amount == 0 and sea.amount == 0:
-        den_factor = 0
-        sea_factor = 0
-    elif den.amount > sea.amount:
-        sea_factor = sea.amount * 100.0 / den.amount
-    elif sea.amount > den.amount:
-        den_factor = den.amount * 100.0 / sea.amount
-    den_factor *= 0.8
-    sea_factor *= 0.8
+    if den.amount < 1000 and sea.amount < 1000:
+        den_factor = den.amount * 100.0 / 1000.0
+        sea_factor = sea.amount * 100.0 / 1000.0
+    else: 
+        den_factor = 100
+        sea_factor = 100
+        if den.amount > sea.amount:
+            sea_factor = sea.amount * 100.0 / den.amount
+        elif sea.amount > den.amount:
+            den_factor = den.amount * 100.0 / sea.amount
     return render_template('index.html', den=den, sea=sea, den_factor=den_factor, sea_factor=sea_factor)
 
 @views.route('/login')
