@@ -17,7 +17,10 @@ def index():
     sea = Score.get_or_insert('sea', name='Seattle', amount=0)
     den_factor = 100
     sea_factor = 100
-    if den.amount > sea.amount:
+    if den.amount == 0 and sea.amount == 0:
+        den_factor = 0
+        sea_factor = 0
+    elif den.amount > sea.amount:
         sea_factor = sea.amount * 100.0 / den.amount
     elif sea.amount > den.amount:
         den_factor = den.amount * 100.0 / sea.amount
