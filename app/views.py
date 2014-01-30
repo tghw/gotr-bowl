@@ -15,9 +15,10 @@ def add_auth():
 def index():
     den = Score.get_or_insert('den', name='Denver', amount=0)
     sea = Score.get_or_insert('sea', name='Seattle', amount=0)
-    if den.amount < 100000 and sea.amount < 100000:
-        den_factor = den.amount * 100.0 / 100000.0
-        sea_factor = sea.amount * 100.0 / 100000.0
+    goal = 5500 * 100.0
+    if den.amount < goal and sea.amount < goal:
+        den_factor = den.amount * 100.0 / goal
+        sea_factor = sea.amount * 100.0 / goal
     else: 
         den_factor = 100
         sea_factor = 100
@@ -53,7 +54,7 @@ def logout():
 def edit(team):
     if team not in ['den', 'sea']:
         return 'Page not found.', 404
-    if session.get('type') not in ['den', 'admin']:
+    if session.get('type') not in [team, 'admin']:
         return redirect(url_for('login'))
     score = Score.get_by_key_name(team)
     return render_template('edit.html', score=score)
