@@ -15,7 +15,7 @@ def add_auth():
 def index():
     den = Score.get_or_insert('den', name='Denver', amount=0)
     sea = Score.get_or_insert('sea', name='Seattle', amount=0)
-    goal = 5500 * 100.0
+    goal = 6500 * 100.0
     if den.amount < goal and sea.amount < goal:
         den_factor = den.amount * 100.0 / goal
         sea_factor = sea.amount * 100.0 / goal
